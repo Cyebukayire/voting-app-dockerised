@@ -1,5 +1,10 @@
 import express from "express";
-const app = express();
-app.get('/', (req, res)=> res.send("Welcome to the VOTE App"));
+import { connectDB } from "./database";
 
-app.listen(5000, ()=> console.log('The app is running on port 5000'));
+connectDB();
+
+const app = express();
+const PORT = 4000;
+app.get('/api/v1', (req, res)=> res.send("Welcome to the VOTING App"));
+
+app.listen(PORT , ()=> console.log(`The app is running on port 4000`));
