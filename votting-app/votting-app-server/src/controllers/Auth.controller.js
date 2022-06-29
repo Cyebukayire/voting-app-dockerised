@@ -17,10 +17,9 @@ export const Signup = async(req, res) => {
 
 export const Signin = async(req, res) => {
     // check if user exists n verify password
-    // return res.send(req.body)
     let user = await User.findOne({email: req.body.email});
     if(!user) return res.status(401).json({success: false, message: "Your email or password is wrong"});
-    // return res.send(user)
+    // check if password is corrects
     if(req.body.password != user.password) return res.status(401).json({success: false, message: "Your email or password is wrong"});
     user = new User({
         email: req.body.email,
