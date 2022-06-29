@@ -1,10 +1,15 @@
 import express from "express";
-import { connectDB } from "./database";
+import { DbConnection } from "./database";
+import authRouter from './routes/Auth.route';
 
-connectDB();
+DbConnection();
 
 const app = express();
-const PORT = 4000;
-app.get('/api/v1', (req, res)=> res.send("Welcome to the VOTING App"));
+const port = process.env.PORT || 4000;
 
-app.listen(PORT , ()=> console.log(`The app is running on port 4000`));
+app.use(express.json());
+// app.use(cors());
+app.get('/api/v1', (req,res) => res.send("Welcome to Server!"))
+app.use('/api/v1/auth', authRouter )
+
+app.listen(port, ()=> console.log(`The server is running on ${port}`));
