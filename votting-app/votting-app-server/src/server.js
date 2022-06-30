@@ -1,5 +1,6 @@
 import express from "express";
 import { DbConnection } from "./database";
+import authMiddleware from "./middlewares/auth.middleware";
 import authRouter from './routes/Auth.route';
 import userRouter from './routes/User.route';
 

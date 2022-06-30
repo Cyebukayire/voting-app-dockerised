@@ -21,11 +21,11 @@ export const Signin = async(req, res) => {
     if(!user) return res.status(401).json({success: false, message: "Your email or password is wrong"});
     // check if password is corrects
     if(req.body.password != user.password) return res.status(401).json({success: false, message: "Your email or password is wrong"});
+    const token = Jwt.sign({_id: user._id, name: user.name, email: user.email}, "PRIVATEKEY22211", {expiresIn: '24h'});
     user = new User({
         email: req.body.email,
         password: req.body.password
     })
     user.save();
-    
-    return res.status(200).json({success: true, data: user})
+    return res.status(200).json({success: true, token: token})
 }
