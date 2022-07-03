@@ -1,0 +1,459 @@
+{
+  "swaggerDefinition": {
+    "swagger": "2.0",
+    "info": {
+      "title": "api",
+      "description": "api API Documentation",
+      "termsOfService": "http://swagger.io/terms/",
+      "contact": {
+        "name": "API Support",
+        "url": "http://www.swagger.io/support",
+        "email": "support@swagger.io"
+      },
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      },
+      "version": "1.0.0"
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/api/v1/users/signup": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "",
+          "description": "",
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/api/v1/users/signin": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "",
+          "description": "",
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/api/v1/users/profile": {
+        "get": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "",
+          "description": "",
+          "parameters": [],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/User"
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string",
+                    "example": "Internal Server Error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/candidacy/upload": {
+        "post": {
+          "tags": [
+            "Candidacies"
+          ],
+          "summary": "",
+          "description": "",
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Candidacy"
+              }
+            }
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "schema": {
+                "$ref": "#/definitions/Candidacy"
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/api/v1/candidacy": {
+        "get": {
+          "tags": [
+            "Candidacies"
+          ],
+          "summary": "",
+          "description": "",
+          "parameters": [],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Candidacy"
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string",
+                    "example": "Internal Server Error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/candidacy/{id}": {
+        "get": {
+          "tags": [
+            "Candidacies"
+          ],
+          "summary": "",
+          "description": "",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Candidacy"
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string",
+                    "example": "Internal Server Error"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "Candidacies"
+          ],
+          "summary": "",
+          "description": "",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/Candidacy"
+              }
+            }
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "schema": {
+                "$ref": "#/definitions/Candidacy"
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Candidacies"
+          ],
+          "summary": "",
+          "description": "",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "deleted": {
+                    "type": "boolean",
+                    "example": true
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/api/v1/candidacy/user/{id}": {
+        "get": {
+          "tags": [
+            "Candidacies"
+          ],
+          "summary": "",
+          "description": "",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Candidacy"
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string",
+                    "example": "Internal Server Error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/candidacy/{id}/vote": {
+        "put": {
+          "tags": [
+            "Candidacies"
+          ],
+          "summary": "",
+          "description": "",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/Candidacy"
+              }
+            }
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "201": {
+              "description": "Created",
+              "schema": {
+                "$ref": "#/definitions/Candidacy"
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "object"
+          },
+          "email": {
+            "type": "object"
+          },
+          "password": {
+            "type": "object"
+          }
+        }
+      },
+      "Candidacy": {
+        "type": "object",
+        "properties": {
+          "userID": {
+            "type": "object"
+          },
+          "votes": {
+            "type": "object"
+          },
+          "avatar": {
+            "type": "object"
+          },
+          "description": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  },
+  "apis": []
+}

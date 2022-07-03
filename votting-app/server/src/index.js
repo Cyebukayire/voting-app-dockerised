@@ -4,8 +4,10 @@ import authRoute from './routes/user.route'
 import 'dotenv/config'
 import candidacyRoute from './routes/candidacy.route'
 import cors from 'cors'
-
-// db();
+import { Swaggiffy } from 'swaggiffy'
+import swaggerDoc from '../swagger/swagger.json'
+import swaggerUi from 'swagger-ui-express';
+import userRoute from './routes/user.route';
 
 connectToDB();
 
@@ -21,6 +23,8 @@ app.get('/api',(req, res) => {
 
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/candidacy', candidacyRoute);
-// app.use('/api/v1/candidacy', userRoute);
+app.use('/api/v1/api-doc', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
+app.use('/api/v1/users', userRoute);
 
 app.listen(port, ()=> console.log(`app is running on port ${port}`));
+new Swaggiffy().setupExpress(app).swaggiffy()

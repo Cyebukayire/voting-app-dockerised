@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
-const Schema = mongoose.Schema({
+import { registerDefinition, registerSchema } from 'swaggiffy';
+
+const obj = {
     userID: {
         type: String,
         required: true
@@ -17,9 +19,13 @@ const Schema = mongoose.Schema({
         type: String,
         required: true,
     }
-}, {
+}
+const Schema = mongoose.Schema(obj, {
     timestamps: true,
 })
 
+registerSchema('Candidacy', obj)
+
 const Candidacy = mongoose.model("Candidacy", Schema, "candidacies");
 export default Candidacy;
+

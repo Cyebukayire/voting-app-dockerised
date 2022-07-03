@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev":"NODE_ENV=development nodemon --exec babel-node src/index.js",
+    "start:dev": "NODE_ENV=development nodemon --exec babel-node src/index.js",
     "start:container": "NODE_ENV=container nodemon --exec babel-node src/index.js",
-    "start": "NODE_ENV=production nodemon --exec babel-node src/index.js"
+    "start": "nodemon --exec babel-node src/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +17,10 @@
     "express": "^4.18.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.6",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "swagger-ui": "^4.12.0",
+    "swagger-ui-express": "^4.4.0",
+    "swaggiffy": "^1.0.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",

@@ -15,3 +15,5 @@ const AuthMiddleware = async(req, res, next) => {
     }
 }
 export default AuthMiddleware;
+
+//"start": "NODE_ENV=production nodemon --exec babel-node src/index.js"

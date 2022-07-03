@@ -1,6 +1,7 @@
 import { deleteCandidacy, getAllCandidacies, getCandidacyById, getCandidacyByUserId, updateCandidacy, uploadCandidacy, vote } from "../controllers/candidacy.controller";
 import express from 'express'
 import AuthMiddleware from "../middlewares/auth.middleware";
+import { registerDefinition } from "swaggiffy";
 
 const router = express.Router();
 
@@ -12,4 +13,5 @@ router.put('/:id',updateCandidacy);
 router.delete('/:id', deleteCandidacy);
 router.put('/:id/vote', AuthMiddleware, vote);
 
+registerDefinition(router, {tags: 'Candidacies', basePath: '/api/v1/candidacy', mappedSchema: 'Candidacy'});
 export default router;

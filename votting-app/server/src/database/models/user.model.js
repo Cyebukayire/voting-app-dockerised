@@ -1,5 +1,7 @@
 import mongoose from 'mongoose'
-const Schema = mongoose.Schema({
+import { registerSchema } from 'swaggiffy'
+
+const obj = {
     name: {
         type: String,
         required: true,
@@ -12,7 +14,8 @@ const Schema = mongoose.Schema({
         type:String,
         required: true
     }
-})
-
+}
+const Schema = mongoose.Schema(obj)
+registerSchema('User', obj)
 const User = mongoose.model("User", Schema);
 export default User;

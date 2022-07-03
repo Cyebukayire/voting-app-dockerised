@@ -33,7 +33,7 @@ const Votes = () => {
                 <div className="candidates-box">
                     {candidates.map((vote, index) => (
                         <div key={index.toString()} className='candidate'>
-                           <VoteItem id={vote._id} name={vote.user.name} avatar={vote.avatar} votes={vote.votes} addVote={()=>addVote(vote._id)} />
+                           <VoteItem id={vote._id} name={vote.name} avatar={vote.avatar} votes={vote.votes} addVote={()=>addVote(vote._id)} />
                         </div>
                     ))}
                 </div>
