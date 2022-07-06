@@ -13,4 +13,30 @@
  * npm i swaggiffy
  * npx swaggiffy init
  * npx swaggiffy generate:spec -r
+ * 
+ * 
+ * To start nginix
+ * docker-compose rm -f
+ * docker-compose pull
+ * docker-compose up
+ * 
+ * 
+ * env
+ * server/database/index
+ * Dockerfile.dev
+ * 
+ * 
+ * 
+ * 
+ * 
+ * Github Actions
+ * .github/workflows
+ *      deploy.yml //find a template online
+ * 
+ * 
+ * client 
+ *  nginix
+ *  dockerfile
+ * 
+ *ngnix
  */

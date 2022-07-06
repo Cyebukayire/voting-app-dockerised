@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "NODE_ENV=development nodemon --exec babel-node src/index.js",
     "start:container": "NODE_ENV=container nodemon --exec babel-node src/index.js",
-    "start": "nodemon --exec babel-node src/index.js"
+    "start": "NODE_ENV=production nodemon --exec babel-node src/index.js"
   },
   "author": "",
   "license": "ISC",

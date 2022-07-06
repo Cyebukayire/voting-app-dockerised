@@ -1,6 +1,5 @@
 import mongoose from 'mongoose'
 import { registerSchema } from 'swaggiffy'
-
 const obj = {
     name: {
         type: String,
