@@ -9,7 +9,7 @@ import swaggerDoc from '../swagger/swagger.json'
 import swaggerUi from 'swagger-ui-express';
 import userRoute from './routes/user.route';
 
-connectToDB();
+// connectToDB();
 
 const app = express()
 const port = 5000;

@@ -39,4 +39,16 @@
  *  dockerfile
  * 
  *ngnix
+
+
+
+
+ env
+
+ JWT_KEY = LSJFOIER0923874LKJFLSJ
+
+DB_URL_DEV=mongodb://localhost:27017/voting-app
+DB_URL_CONT=mongodb+srv://learner:password@cluster0.9babc.mongodb.net/votingapp?retryWrites=true&w=majority
+DB_URL_PROD=mongodb://mongo-db:27017
+
  */
