@@ -10,7 +10,7 @@ router.get('/', getAllCandidacies);
 router.get('/:id', getCandidacyById);
 router.get('/user/:id', getCandidacyByUserId);
 router.put('/:id',updateCandidacy); 
-router.delete('/:id', deleteCandidacy);
+router.delete('/:id',AuthMiddleware, deleteCandidacy);
 router.put('/:id/vote', AuthMiddleware, vote);
 
 registerDefinition(router, {tags: 'Candidacies', basePath: '/api/v1/candidacy', mappedSchema: 'Candidacy'});
